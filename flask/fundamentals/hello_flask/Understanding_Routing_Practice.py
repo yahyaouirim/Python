@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 app= Flask(__name__)
 @app.route('/')
 def hello_world():
@@ -16,6 +16,9 @@ def repeat(name, num):
         rep+=f'<p>{name}</p>'
     return rep
         
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('error.html'), 404
 
 
 
