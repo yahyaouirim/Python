@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            margin:50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-items: center;
+            gap: 20px;
+            width: 1000px;
+
+        }
+        .main > div{
+            width: 90px;
+            height: 100px;
+            border:2px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        {%for i in range(0, num)%}
+        <div style="background-color: {{color}};"></div>
+        {%endfor%}
+    
+</body>
+</html>
