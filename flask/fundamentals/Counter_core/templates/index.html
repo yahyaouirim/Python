@@ -11,12 +11,14 @@
         <div class="header"> <h1 style="text-align: center; padding-top: 20px;">This is the counter</h1>
         </div>
         <div class="main">
-            <div class="counter" style="height: 200px;">
+            <div class="counter">
                 <h2 style="text-align: center;margin-top: 30px; font-size: 1.5 rem; " id="nbv">Number of visitors</h2>
                 <h3 style="text-align: center; margin-top: 30px;">{{session['count']}} times</h3>
             </div>
             <div class="btn">
                 <a class="btn btn-primary" href="/" role="button">Add visitors</a>
+                <a class="btn btn-primary" href="/two" role="button">Add 2 visitors</a>
+
                 <a class="btn btn-primary" href="/clear" role="button">Clear</a>
 
             </div>
