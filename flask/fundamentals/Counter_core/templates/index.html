@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Home Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header"> <h1 style="text-align: center; padding-top: 20px;">This is the counter</h1>
+        </div>
+        <div class="main">
+            <div class="counter" style="height: 200px;">
+                <h2 style="text-align: center;margin-top: 30px; font-size: 1.5 rem; " id="nbv">Number of visitors</h2>
+                <h3 style="text-align: center; margin-top: 30px;">{{session['count']}} times</h3>
+            </div>
+            <div class="btn">
+                <a class="btn btn-primary" href="/" role="button">Add visitors</a>
+                <a class="btn btn-primary" href="/clear" role="button">Clear</a>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
