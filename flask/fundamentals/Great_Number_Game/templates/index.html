@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Welcome to the Great Number Game !!!</h1>
+            <p>I'm thinking of a number between 1 and 100...</p>
+        </div>
+               
+        <div class="card">
+            <form action="/submit" method="POST">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="guess">Take a gues :</label>
+                        <input type="text" name="guess" class="form-control">
+                    </div>
+                    
+                    <!-- Autres champs du formulaire -->
+                    <input type="submit" value="Guess" class="btn">
+                    
+                </div>
+            </form>
+        </div>
+
+        {% if 'guess' in session: %}
+            {% if session['guess']== session['num']%}
+                <div class="card">
+                    <h2>{{session['guess']}} was the number </h2>
+                    <a href="/clear" class="btn">Play Again</a>
+                </div>
+            {% elif session['guess'] < session['num']%}
+                <h2 style="height: 70px; width: 300px; background-color: red; color:aliceblue; text-align: center;">Too Low !!!</h2>
+            {% else%}
+                <h2 style="height: 70px; width: 300px; background-color: red; color:aliceblue; text-align: center;">Too Hight</h2>
+
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
