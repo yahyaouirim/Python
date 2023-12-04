@@ -9,19 +9,18 @@
     <title>Document</title>
 </head>
 <body class="bg-light">
-    <a href="/" class="btn btn-info btn-rounded mt-4 ms-4 text-white"> HOME </a>
+    <a href="/dojos" class="btn btn-info btn-rounded mt-4 ms-4 text-white"> HOME </a>
 
     <div class="container d-flex justify-content-center" style="min-height: 350px;">
-        <form action="/create/ninja"  method="POST" class="p-3 mb-2 bg-dark bg-gradient text-light rounded" style="min-width: 300px;">
+        <form action="/ninjas/create"  method="post" class="p-3 mb-2 bg-dark bg-gradient text-light rounded" style="min-width: 300px;">
             <h1 class="text-primary text-center fs-1 fw-bold border-bottom border-3">NEW DOJO</h1>
             
             <div class="form-group mb-2">
                 <label for="name" class="form-label text-primary fw-bold">Dojo </label>
                 <select name="dojo_id" class="form-control">
-                    {% for d in dojos %}
-                        <option value="{{d.id}}">{{d.name}}</option>
-                    {% endfor %}
-
+                    {% for d in dojos%}
+                    <option value="{{d.id}}">{{d.name}}</option>
+                    {% endfor%}
                 </select>
             </div>
             
